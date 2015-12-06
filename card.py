@@ -3,9 +3,20 @@
 #coding:utf-8
 
 class Card(object):
-	"""docstring for Card"""
-	def __init__(self, number, name, bank, month_times, year_times, billing_date, grace_period, payment_due_date_type, payment_due_date):
+	"""docstring for Card
+	__number					卡号
+	__name 						卡名称
+	__bank						银行
+	__month_times				月消费次数
+	__year_times				年消费次数
+	__billing_date				账单日
+	__grace_period				免息期
+	__payment_due_date_type		还款日类型
+	__payment_due_date 			还款日
+	"""
+	def __init__(self, number = None, name = None, bank = None, month_times = None, year_times = None, billing_date = None, grace_period = None, payment_due_date_type = None, payment_due_date = None):
 		super(Card, self).__init__()
+
 		self.__number = number
 		self.__name = name
 		self.__bank = bank
@@ -43,7 +54,7 @@ class Card(object):
 	def get_year_times(self):
 		return self.__year_times
 
-	def set_year_times(year_times):
+	def set_year_times(self, year_times):
 		self.__year_times = year_times
 
 	def get_billing_date(self):
@@ -75,14 +86,14 @@ class Card(object):
 		print "%-30s%32s" % ("Type", "Content")
 		print "-" * 62
 		print "%-30s%32s" % ("[Number]", self.__number)
-		print "%-30s%32s" % ("[Name]", self.__name.decode("utf-8").encode("gbk"))
-		print "%-30s%32s" % ("[Bank]", self.__bank.decode("utf-8").encode("gbk"))
-		print "%-30s%32s" % ("[Month Times]", self.__month_times)
-		print "%-30s%32s" % ("[Year Times]", self.__year_times)
-		print "%-30s%32s" % ("[Billing Date]", self.__billing_date)
-		print "%-30s%32s" % ("[Grace Period]", self.__grace_period)
+		print "%-30s%32s" % ("[Name]", self.__name.encode("gbk"))
+		print "%-30s%32s" % ("[Bank]", self.__bank.encode("gbk"))
+		print "%-30s%32s" % ("[Month Times]", str(self.__month_times) + "次".decode("utf-8").encode("gbk"))
+		print "%-30s%32s" % ("[Year Times]", str(self.__year_times) + "次".decode("utf-8").encode("gbk"))
+		print "%-30s%32s" % ("[Billing Date]", str(self.__billing_date) + "日".decode("utf-8").encode("gbk"))
+		print "%-30s%32s" % ("[Grace Period]", str(self.__grace_period) + "日".decode("utf-8").encode("gbk"))
 		print "%-30s%32s" % ("[Payment Due Date Type]", self.__payment_due_date_type)
-		print "%-30s%32s" % ("[Payment Due Date]", self.__payment_due_date)
+		print "%-30s%32s" % ("[Payment Due Date]", str(self.__payment_due_date) + "日".decode("utf-8").encode("gbk"))
 		print "-" * 62
 
 def test():

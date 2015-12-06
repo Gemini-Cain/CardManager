@@ -1,0 +1,4 @@
+{"number": "7892", "name": "招行信用卡", "bank": "招商银行", "month_times": 0, "year_times": 0, "billing_date": 9, "grace_period": 21, "payment_due_date_type": "fixed", "payment_due_date": 27}
+{"number": "7892", "name": "招行信用卡", "bank": "招商银行", "month_times": 0, "year_times": 0, "billing_date": 9, "grace_period": 21, "payment_due_date_type": "fixed", "payment_due_date": 27}
+{"number": "7892", "name": "招行信用卡", "bank": "招商银行", "month_times": 0, "year_times": 0, "billing_date": 9, "grace_period": 21, "payment_due_date_type": "fixed", "payment_due_date": 27}
+{"number": "7892", "name": "招行信用卡", "bank": "招商银行", "month_times": 0, "year_times": 0, "billing_date": 9, "grace_period": 21, "payment_due_date_type": "fixed", "payment_due_date": 27}
