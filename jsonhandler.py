@@ -113,8 +113,10 @@ def test():
 	json = DBHandler("D:\\Code\\CardManager\\card.txt")
 	for item in json.get_cards():
 		item.show_card()
-
-	#json.saveAccounts(json.getAccounts())
+	temp = card.Card(str("0001").decode("utf-8"), str("建行信用卡").decode("utf-8"), str("建设银行").decode("utf-8"))
+	cards = json.get_cards()
+	cards.append(temp)
+	json.save_cards(cards)
 	#condition = {"name" : str("豆瓣").decode("utf-8"), "symbol" : str("DB").decode("utf-8")}
 	#result = json.search(condition)
 	#print result
