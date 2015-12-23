@@ -3,27 +3,27 @@
 #coding:utf-8
 
 class Card(object):
-	"""docstring for Card
-	__number					卡号
-	__name 						卡名称
-	__bank						银行
-	__month_times				月消费次数
-	__year_times				年消费次数
-	__billing_date				账单日
-	__grace_period				免息期
-	__payment_due_date_type		还款日类型
-	__payment_due_date 			还款日
-	"""
-	def __init__(self, number = None, name = None, bank = None, month_times = None, year_times = None, billing_date = None, grace_period = None, payment_due_date_type = None, payment_due_date = None):
-		super(Card, self).__init__()
 
+	def __init__(self, number = None, name = None, bank = None, month_times = 0, year_times = 0, billing_date = 0, payment_due_date_month = "current", payment_due_date_type = "fixed", payment_due_date = 0):
+		"""docstring for Card
+		__number					卡号
+		__name 						卡名称
+		__bank						银行
+		__month_times				月消费次数
+		__year_times				年消费次数
+		__billing_date				账单日
+		__payment_due_date_month	还款期是否本月
+		__payment_due_date_type		还款日类型
+		__payment_due_date 			还款日
+		"""
+		super(Card, self).__init__()
 		self.__number = number
 		self.__name = name
 		self.__bank = bank
 		self.__month_times = month_times
 		self.__year_times = year_times
 		self.__billing_date = billing_date
-		self.__grace_period = grace_period
+		self.__payment_due_date_month = payment_due_date_month
 		self.__payment_due_date_type = payment_due_date_type
 		self.__payment_due_date = payment_due_date
 
@@ -63,11 +63,11 @@ class Card(object):
 	def set_billing_date(self, billing_date):
 		self.__billing_date = billing_date
 
-	def get_grace_period(self):
-		return self.__grace_period
+	def get_payment_due_date_month(self):
+		return self.__payment_due_date_month
 
-	def set_grace_period(self, grace_period):
-		self.__grace_period = grace_period
+	def set_payment_due_date_month(self, payment_due_date_month):
+		self.__payment_due_date_month = payment_due_date_month
 
 	def get_payment_due_date_type(self):
 		return self.__payment_due_date_type
@@ -91,13 +91,13 @@ class Card(object):
 		print "%-30s%32s" % ("[Month Times]", str(self.__month_times) + "次".decode("utf-8").encode("gbk"))
 		print "%-30s%32s" % ("[Year Times]", str(self.__year_times) + "次".decode("utf-8").encode("gbk"))
 		print "%-30s%32s" % ("[Billing Date]", str(self.__billing_date) + "日".decode("utf-8").encode("gbk"))
-		print "%-30s%32s" % ("[Grace Period]", str(self.__grace_period) + "日".decode("utf-8").encode("gbk"))
+		print "%-30s%32s" % ("[Payment Due Date Month]", str(self.__payment_due_date_month))
 		print "%-30s%32s" % ("[Payment Due Date Type]", self.__payment_due_date_type)
 		print "%-30s%32s" % ("[Payment Due Date]", str(self.__payment_due_date) + "日".decode("utf-8").encode("gbk"))
 		print "-" * 62
 
 def test():
-	card = Card("8444", "中信信用卡", "中信", 0, 0, 13, 38, "fixed", 2)
+	card = Card("8444", str("中信信用卡").decode("utf-8"), str("中信").decode("utf-8"), 0, 0, 13, "current", "fixed", 2)
 	card.show_card()
 
 if __name__ == '__main__':
